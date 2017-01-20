@@ -1,4 +1,4 @@
-const { docClient } = require('./common/dynamodb')
+const { docClient } = require('../common/dynamodb')
 
 docClient
   .put({

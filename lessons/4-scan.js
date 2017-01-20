@@ -1,14 +1,14 @@
-const { docClient } = require('./common/dynamodb')
+const { docClient } = require('../common/dynamodb')
 
 docClient
-  .query({
+  .scan({
     TableName: 'content-team-members',
-    KeyConditionExpression: '#name = :nameValue',
+    FilterExpression: '#awesomenessLevel = :awesomenessLevelValue',
     ExpressionAttributeNames: {
-      '#name': 'name'
+      '#awesomenessLevel': 'awesomenessLevel'
     },
     ExpressionAttributeValues: {
-      ':nameValue': 'dan'
+      ':awesomenessLevelValue': 10
     }
   })
   .promise()

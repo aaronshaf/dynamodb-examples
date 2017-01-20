@@ -1,5 +1,5 @@
-const { docClient } = require('./common/dynamodb')
-const ensureTable = require('./common/ensure-table')
+const { docClient } = require('../common/dynamodb')
+const ensureTable = require('../common/ensure-table')
 
 Promise.resolve().then(() => {
   return ensureTable({
